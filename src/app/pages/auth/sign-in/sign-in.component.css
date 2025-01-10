@@ -1,0 +1,44 @@
+.signin{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    height: 100vh;
+}
+.signin-left
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #1C1D21;
+    padding: 40px 80px;
+}
+.signin-left-sub{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+}
+
+.login-form-forgot
+{
+    color: #ccc;
+}
+.signin-right{
+    
+    width: 100%;
+    padding: 40px;
+    background-color: #9C6FE499;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signin-right p{
+    
+    font-size: 45px;
+    font-weight: bold;
+}

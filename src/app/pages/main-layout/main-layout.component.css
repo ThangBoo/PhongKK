@@ -1,0 +1,13 @@
+nz-breadcrumb{
+    width: 100%;
+}
+nz-breadcrumb-item{
+    display: block;
+    background-color: #4b945bee;
+    color: #fff;
+    width: 100%;
+    border-radius: 8px;
+    height: 50px;
+    padding: 7px 20px;
+
+}

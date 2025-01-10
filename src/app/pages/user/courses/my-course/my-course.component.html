@@ -1,0 +1,37 @@
+<div style="background-color: #fff; padding-top: 10px">
+    <div>
+        <p>Chuyên ngành: Khoa học máy tính</p>
+    </div>
+    <nz-table
+      #basicTable
+      [nzBordered]="true"
+      [nzData]="displayedData"
+      [nzPageSize]="pageSize"
+      [nzShowPagination]="false"
+      [nzPaginationPosition]="'bottom'"
+      [nzScroll]="{ x: '800px'}"
+    >
+      <thead>
+        <tr>
+          <th nzAlign="center" nzWidth="50px">STT</th>
+          <th nzAlign="center" nzWidth="100px">Mã môn học</th>
+          <th nzAlign="center" nzWidth="200px" [nzSortFn]="compareSubjectName">Môn học</th>
+          <th nzAlign="center" nzWidth="100px" [nzSortFn]="compareCredit">Số TC</th>
+          <th nzAlign="center" nzWidth="200px">Trạng thái</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of basicTable.data; let i = index; ngForTrackBy: data">
+          <td nzAlign="center">{{ i + 1 + (pageIndex - 1) * pageSize }}</td>
+          <td nzAlign="center">{{ data.subjectId }}</td>
+          <td routerLink="/main-layout/detail-subject" style="color: #2d8a41ee; cursor: pointer;">{{ data.subjectName }}</td>
+          <td nzAlign="center">{{ data.credit }}</td>
+          <ng-container>
+            <td style="color: #2d8a41ee;" nzAlign="center">
+                Đã hoàn thành
+            </td>
+          </ng-container>
+        </tr>
+      </tbody>
+    </nz-table>
+</div>

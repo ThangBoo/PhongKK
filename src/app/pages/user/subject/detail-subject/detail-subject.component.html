@@ -1,0 +1,43 @@
+<div>
+    <div class="detail-subject">
+        <h3>Chi tiết </h3>
+        <p><b>Mã môn học</b> M123</p>
+        <p><b>Tên môn học:</b> Lập trình java</p>
+        <p><b>Số tín chỉ:</b> 3</p>
+      </div>
+
+      <nz-table
+      #basicTable
+      [nzBordered]="true"
+      [nzData]="displayedData"
+      [nzPageSize]="pageSize"
+      [nzShowPagination]="false"
+      [nzPaginationPosition]="'bottom'"
+      [nzScroll]="{ x: '800px'}"
+    >
+      <thead>
+        <tr>
+          <th nzAlign="center" nzWidth="50px">STT</th>
+          <th nzAlign="center" nzWidth="100px">Mã giáo viên</th>
+          <th nzAlign="center" nzWidth="200px" [nzSortFn]="compareLecturerName">Tên giáo viên</th>
+          <th nzAlign="center" nzWidth="100px">Email</th>
+          <th nzAlign="center" nzWidth="100px" >
+            Số điện thoại
+          </th>
+          <th nzAlign="center" nzWidth="100px" >
+            Điểm trung bình
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of basicTable.data; let i = index; ngForTrackBy: data">
+          <td nzAlign="center">{{ i + 1 + (pageIndex - 1) * pageSize }}</td>
+          <td nzAlign="center">{{ data.lecturerId }}</td>
+          <td routerLink="/main-layout/detail-lecturer" style="color: #2d8a41ee; cursor: pointer;">{{ data.lecturerName }}</td>
+          <td nzAlign="center">{{ data.lecturerEmail }}</td>
+          <td nzAlign="center">{{ data.lecturerPhone }}</td>
+          <td nzAlign="center">{{ data.averageScore }}</td>
+        </tr>
+      </tbody>
+    </nz-table>
+</div>

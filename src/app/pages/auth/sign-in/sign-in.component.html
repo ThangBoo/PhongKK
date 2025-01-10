@@ -1,0 +1,113 @@
+<div class="signin">
+  <div class="signin-left">
+    <div class="signin-left-sub">
+      <h1 style="text-align: center; font-weight: bolder" class="white-color">
+        Đăng nhập
+      </h1>
+
+      <form nz-form>
+        <nz-form-item nzXs="24" nzSm="24" nzMd="24" nzLg="24">
+          <nz-form-label
+            [nzLabelAlign]="'left'"
+            nzRequired
+            nzXs="24"
+            nzSm="24"
+            nzMd="24"
+            nzLg="24"
+          >
+            <span style="color: #ccc !important"> Mã sinh viên </span>
+          </nz-form-label>
+          <nz-form-control
+            nzXs="24"
+            nzSm="24"
+            nzMd="24"
+            nzLg="24"
+            nzErrorTip="Hãy nhập mã sinh viên của bạn"
+          >
+            <nz-input-group>
+              <input type="text" nz-input placeholder="2021601774" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item nzXs="24" nzSm="24" nzMd="24" nzLg="24">
+          <nz-form-label
+            [nzLabelAlign]="'left'"
+            nzRequired
+            nzXs="24"
+            nzSm="24"
+            nzMd="24"
+            nzLg="24"
+          >
+            <span style="color: #ccc !important"> Mật khẩu </span>
+          </nz-form-label>
+          <nz-input-group [nzSuffix]="suffixTemplate">
+            <input
+              [type]="passwordVisible ? 'text' : 'password'"
+              nz-input
+              placeholder="*******"
+            />
+          </nz-input-group>
+          <ng-template #suffixTemplate>
+            <span
+              nz-icon
+              class="ant-input-password-icon"
+              [nzType]="passwordVisible ? 'eye-invisible' : 'eye'"
+              (click)="passwordVisible = !passwordVisible"
+            ></span>
+          </ng-template>
+        </nz-form-item>
+        <div>
+          <div style="margin: 0 0 24px">
+            <a class="login-form-forgot">Forgot password</a>
+          </div>
+        </div>
+        <button
+          nz-button
+          nzBlock
+          routerLink="/main-layout"
+          style="
+            border-radius: 5px;
+            background-color: #9c6fe499;
+            color: #fff;
+            border: 1px solid #9c6fe499;
+          "
+        >
+          Đăng nhập
+        </button>
+      </form>
+
+      <div
+        style="
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+        "
+      >
+        <div class="white-color">Bạn chưa có tài khoản?</div>
+        <div>
+          <button
+            nz-button
+            routerLink="/signup"
+            style="
+              border-radius: 5px;
+              background-color: #56575d;
+              color: #fff;
+              border: 1px solid #56575d;
+            "
+          >
+            Đăng ký
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="signin-right">
+    <p class="white-color" style="text-align: center">Welcome to UETChat</p>
+    <div style="display: flex; justify-content: center; align-items: center">
+      <img style="width: 60%" src="signin.png" alt="" />
+    </div>
+  </div>
+</div>

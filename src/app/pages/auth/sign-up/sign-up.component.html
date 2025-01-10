@@ -1,0 +1,149 @@
+<div class="signup">
+  <div class="signup-left">
+    <div class="signup-left-sub">
+      <h1 style="text-align: center; font-weight: bolder" class="white-color">
+        Đăng ký
+      </h1>
+
+      <form nz-form>
+        <nz-form-item nzXs="24" nzSm="24" nzMd="24" nzLg="24">
+          <nz-form-control
+            nzXs="24"
+            nzSm="24"
+            nzMd="24"
+            nzLg="24"
+            nzErrorTip="Hãy nhập email của bạn"
+          >
+            <nz-input-group>
+              <input type="email" nz-input placeholder="Email" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item nzXs="24" nzSm="24" nzMd="24" nzLg="24">
+          <nz-form-control
+            nzXs="24"
+            nzSm="24"
+            nzMd="24"
+            nzLg="24"
+            nzErrorTip="Hãy nhập họ tên của bạn"
+          >
+            <nz-input-group>
+              <input type="text" nz-input placeholder="Họ và tên" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item nzXs="24" nzSm="24" nzMd="24" nzLg="24">
+          <nz-form-control
+            nzXs="24"
+            nzSm="24"
+            nzMd="24"
+            nzLg="24"
+            nzErrorTip="Hãy nhập mã sinh viên của bạn"
+          >
+            <nz-input-group>
+              <input type="text" nz-input placeholder="Mã sinh viên" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item nzXs="24" nzSm="24" nzMd="24" nzLg="24">
+          <nz-form-control
+            nzXs="24"
+            nzSm="24"
+            nzMd="24"
+            nzLg="24"
+            nzErrorTip="Hãy nhập số điện thoại của bạn"
+          >
+            <nz-input-group>
+              <input type="text" nz-input placeholder="Số điện thoại" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item nzXs="24" nzSm="24" nzMd="24" nzLg="24">
+          <nz-form-control
+            nzXs="24"
+            nzSm="24"
+            nzMd="24"
+            nzLg="24"
+            nzErrorTip="Hãy nhập họ tên của bạn"
+          >
+            <nz-input-group>
+              <input type="text" nz-input placeholder="Họ và tên" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item nzXs="24" nzSm="24" nzMd="24" nzLg="24">
+          <nz-select
+            nzShowSearch
+            nzAllowClear
+            nzPlaceHolder="Chọn chuyên nghành"
+            [(ngModel)]="selectedValue"
+          >
+            <nz-option
+              *ngFor="let major of majors"
+              [nzLabel]="major.name"
+              [nzValue]="major"
+            >
+            </nz-option>
+          </nz-select>
+        </nz-form-item>
+
+        <nz-form-item nzXs="24" nzSm="24" nzMd="24" nzLg="24">
+          <nz-input-group [nzSuffix]="suffixTemplate">
+            <input
+              [type]="passwordVisible ? 'text' : 'password'"
+              nz-input
+              placeholder="Mật khẩu"
+            />
+          </nz-input-group>
+          <ng-template #suffixTemplate>
+            <span
+              nz-icon
+              class="ant-input-password-icon"
+              [nzType]="passwordVisible ? 'eye-invisible' : 'eye'"
+              (click)="passwordVisible = !passwordVisible"
+            ></span>
+          </ng-template>
+        </nz-form-item>
+
+        <nz-form-item nzXs="24" nzSm="24" nzMd="24" nzLg="24">
+          <nz-input-group [nzSuffix]="suffixTemplate">
+            <input
+              [type]="passwordVisible ? 'text' : 'password'"
+              nz-input
+              placeholder="Nhập lại mật khẩu"
+            />
+          </nz-input-group>
+          <ng-template #suffixTemplate>
+            <span
+              nz-icon
+              class="ant-input-password-icon"
+              [nzType]="passwordVisible ? 'eye-invisible' : 'eye'"
+              (click)="passwordVisible = !passwordVisible"
+            ></span>
+          </ng-template>
+        </nz-form-item>
+        <button
+          nz-button
+          nzBlock
+          routerLink="/signin"
+          style="
+            border-radius: 5px;
+            background-color: #9c6fe499;
+            color: #fff;
+            border: 1px solid #9c6fe499;
+          "
+        >
+          Đăng ký
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="signup-right">
+    <p class="white-color" style="text-align: center">Welcome to UETChat</p>
+    <div style="display: flex; justify-content: center; align-items: center">
+      <img style="width: 60%" src="signin.png" alt="" />
+    </div>
+  </div>
+</div>

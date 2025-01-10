@@ -1,0 +1,30 @@
+<ul nz-menu nzMode="inline" style="width: 100%; height: 100%">
+  <li
+    nz-menu-item
+    routerLink="/main-layout/home"
+    (click)="emitBreadcrumb(['Trang chủ'])"
+  >
+    <span>Trang chủ</span>
+  </li>
+  <li
+    nz-menu-item
+    routerLink="/main-layout/user-account"
+    (click)="emitBreadcrumb(['Hồ sơ'])"
+  >
+    <span>Hồ sơ</span>
+  </li>
+  <li
+    nz-menu-item
+    routerLink="/main-layout/user-score"
+    (click)="emitBreadcrumb(['Kết quả học tập'])"
+  >
+    <span> Kết quả học tập </span>
+  </li>
+  <li
+    nz-menu-item
+    routerLink="/main-layout/my-course"
+    (click)="emitBreadcrumb(['Chương trình học tập'])"
+  >
+    <span>Chương trình học tập</span>
+  </li>
+</ul>

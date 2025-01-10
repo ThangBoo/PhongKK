@@ -1,0 +1,60 @@
+<div style="background-color: #fff; padding-bottom: 10px">
+    <nz-table
+      #basicTable
+      [nzBordered]="true"
+      [nzData]="displayedData"
+      [nzPageSize]="pageSize"
+      [nzShowPagination]="false"
+      [nzPaginationPosition]="'bottom'"
+      [nzScroll]="{ x: '800px'}"
+    >
+      <thead>
+        <tr>
+          <th nzAlign="center" nzWidth="50px">STT</th>
+          <th nzAlign="center" nzWidth="100px">Mã môn học</th>
+          <th nzAlign="center" nzWidth="200px" [nzSortFn]="compareSubjectName">Môn học</th>
+          <th nzAlign="center" nzWidth="100px" [nzSortFn]="compareCredit">Số TC</th>
+          <th nzAlign="center" nzWidth="100px">
+            Điểm hệ 10
+          </th>
+          <th nzAlign="center" nzWidth="100px" [nzSortFn]="compareGradeFor" [nzSortPriority]="2">
+            Điểm hệ 4
+          </th>
+          <th nzAlign="center" nzWidth="100px" [nzSortFn]="compareGradeABC" [nzSortPriority]="3">
+            Điểm chữ
+          </th>
+          <th nzAlign="center" nzWidth="100px" [nzSortFn]="compareSemester" [nzSortPriority]="1">
+            Học kỳ
+          </th>
+          <th nzAlign="center" nzWidth="200px">Tùy chọn</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of basicTable.data; let i = index; ngForTrackBy: data">
+          <td nzAlign="center">{{ i + 1 + (pageIndex - 1) * pageSize }}</td>
+          <td nzAlign="center">{{ data.subjectId }}</td>
+          <td routerLink="/main-layout/detail-subject" style="color: #2d8a41ee; cursor: pointer;">{{ data.subjectName }}</td>
+          <td nzAlign="center">{{ data.credit }}</td>
+          <td nzAlign="center">{{ data.grade }}</td>
+          <td nzAlign="center">{{ data.gradeFor }}</td>
+          <td nzAlign="center">{{ data.gradeABC }}</td>
+          <td nzAlign="center">{{ data.semesterName }}</td>
+          <ng-container>
+            <td nzAlign="center">
+              <button routerLink="/main-layout/update-user-score" style="background-color: #4b945bee; color: #fff; margin-right: 10px;" nz-button nzSize="default" nzShape="round">
+                <span nz-icon nzType="file" nzTheme="outline"></span>
+              </button>
+              <button style="background-color: #eb5252ee; color: #fff;" nz-button nzSize="default" nzShape="round">
+                <span nz-icon nzType="clear" nzTheme="outline"></span>
+              </button>
+            </td>
+          </ng-container>
+        </tr>
+      </tbody>
+    </nz-table>
+
+    <div  style="margin: 20px 0 0 20px; font-weight: bold;">
+        <p>Tổng tín chỉ: <b style="color: #eb5252ee;"></b> </p>
+        <p>Điểm trung bình tích lũy hệ 4: <b style="color: #eb5252ee;"></b></p>
+    </div>
+</div>

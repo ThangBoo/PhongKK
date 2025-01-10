@@ -1,0 +1,162 @@
+<div>
+  <div>
+    <nz-upload
+      nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+      nzListType="picture-card"
+      [(nzFileList)]="fileList"
+      [nzShowButton]="fileList.length < 8"
+      [nzPreview]=""
+    >
+      <div>
+        <span nz-icon nzType="plus"></span>
+        <div style="margin-top: 8px">Upload</div>
+      </div>
+    </nz-upload>
+    <nz-modal
+      [nzVisible]="previewVisible"
+      [nzContent]="modalContent"
+      [nzFooter]="null"
+      (nzOnCancel)="previewVisible = false"
+    >
+      <ng-template #modalContent>
+        <img [src]="previewImage" style="width: 100%" />
+      </ng-template>
+    </nz-modal>
+  </div>
+
+  <form
+    nz-form
+    (ngSubmit)="onSubmit()"
+    [formGroup]="userForm"
+    class="updateAccountF"
+  >
+    <nz-row [nzGutter]="{ xs: 8, sm: 10, md: 12, lg: 14, xl: 20 }">
+      <nz-col [nzLg]="12" [nzMd]="12" [nzSm]="24" [nzXs]="24">
+        <nz-form-item class="">
+          <nz-form-label
+            [nzLabelAlign]="'left'"
+            [nzXs]="24"
+            [nzSm]="24"
+            [nzMd]="24"
+            [nzLg]="24"
+            for="userId"
+            >Mã sinh viên</nz-form-label
+          >
+          <nz-form-control [nzXs]="24" [nzSm]="24" [nzMd]="24" [nzLg]="24">
+            <input nz-input id="userId"/>
+          </nz-form-control>
+        </nz-form-item>
+      </nz-col>
+      <nz-col [nzLg]="12" [nzMd]="12" [nzSm]="24" [nzXs]="24">
+        <nz-form-item class="">
+          <nz-form-label
+            [nzLabelAlign]="'left'"
+            [nzXs]="24"
+            [nzSm]="24"
+            [nzMd]="24"
+            [nzLg]="24"
+            for="userName"
+            >Họ và tên</nz-form-label
+          >
+          <nz-form-control [nzXs]="24" [nzSm]="24" [nzMd]="24" [nzLg]="24">
+            <input nz-input id="userName" />
+          </nz-form-control>
+        </nz-form-item>
+      </nz-col>
+    </nz-row>
+
+    <nz-row [nzGutter]="{ xs: 8, sm: 10, md: 12, lg: 14, xl: 20 }">
+      <nz-col [nzLg]="12" [nzMd]="12" [nzSm]="24" [nzXs]="24">
+        <nz-form-item class="">
+          <nz-form-label
+            [nzLabelAlign]="'left'"
+            [nzXs]="24"
+            [nzSm]="24"
+            [nzMd]="24"
+            [nzLg]="24"
+            for="userEmail"
+            >Email</nz-form-label
+          >
+          <nz-form-control [nzXs]="24" [nzSm]="24" [nzMd]="24" [nzLg]="24">
+            <input
+              nz-input
+              type="email"
+              id="userEmail"
+              formControlName="userEmail"
+            />
+          </nz-form-control>
+        </nz-form-item>
+      </nz-col>
+      <nz-col [nzLg]="12" [nzMd]="12" [nzSm]="24" [nzXs]="24">
+        <nz-form-item class="">
+          <nz-form-label
+            [nzLabelAlign]="'left'"
+            [nzXs]="24"
+            [nzSm]="24"
+            [nzMd]="24"
+            [nzLg]="24"
+            for="userPhone"
+            >Số điện thoại</nz-form-label
+          >
+          <nz-form-control [nzXs]="24" [nzSm]="24" [nzMd]="24" [nzLg]="24">
+            <input nz-input id="userPhone" />
+          </nz-form-control>
+        </nz-form-item>
+      </nz-col>
+    </nz-row>
+
+    <nz-row [nzGutter]="{ xs: 8, sm: 10, md: 12, lg: 14, xl: 20 }">
+      <nz-col [nzLg]="12" [nzMd]="12" [nzSm]="24" [nzXs]="24">
+        <nz-form-item class="">
+          <nz-form-label
+            [nzLabelAlign]="'left'"
+            [nzXs]="24"
+            [nzSm]="24"
+            [nzMd]="24"
+            [nzLg]="24"
+            for="userMajor"
+            >Chuyên ngành</nz-form-label
+          >
+          <nz-form-control [nzXs]="24" [nzSm]="24" [nzMd]="24" [nzLg]="24">
+            <input nz-input id="userMajor" />
+          </nz-form-control>
+        </nz-form-item>
+      </nz-col>
+      <nz-col [nzLg]="12" [nzMd]="12" [nzSm]="24" [nzXs]="24">
+        <nz-form-item class="">
+          <nz-form-label
+            [nzLabelAlign]="'left'"
+            [nzXs]="24"
+            [nzSm]="24"
+            [nzMd]="24"
+            [nzLg]="24"
+            for="userFaculty"
+            >Khoa</nz-form-label
+          >
+          <nz-form-control [nzXs]="24" [nzSm]="24" [nzMd]="24" [nzLg]="24">
+            <input nz-input id="userFaculty" />
+          </nz-form-control>
+        </nz-form-item>
+      </nz-col>
+    </nz-row>
+
+    <nz-row nzJustify="center" class="btn-container">
+      <nz-col>
+        <button
+          nz-button
+          nzSize="large"
+          type="submit"
+          [disabled]="userForm.invalid"
+          style="
+            background-color: #4b945bee;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 8px;
+          "
+        >
+          Cập nhật
+        </button>
+      </nz-col>
+    </nz-row>
+  </form>
+</div>
